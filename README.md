@@ -9,6 +9,7 @@ Groovy 4.0.14
 If any other dependencies are needed, please feel free to add them 
 
 Automation task:
+
 Using this test site: https://www.saucedemo.com/
 
 Complete the test in the LoginPage.feature file in which a user tries to log in with incorrect credentials. Some elements have been located and some methods written. Locate all the WebElements that are needed for the completion of the test, create the methods that are needed in the LoginPage object.

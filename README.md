@@ -1,6 +1,8 @@
 Project requirements:
 Java 18 or higher
+
 Maven 3.8.1
+
 Groovy 4.0.14
 
 If any other dependencies are needed, please feel free to add them 

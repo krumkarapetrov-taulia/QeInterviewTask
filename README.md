@@ -1,4 +1,5 @@
 Project requirements:
+
 Java 18 or higher
 
 Maven 3.8.1

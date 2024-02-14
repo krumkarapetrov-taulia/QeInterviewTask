@@ -28,6 +28,9 @@ class LoginPage extends BaseStepDefinitions{
   @FindBy(id = "logout_sidebar_link")
   WebElement logOutButton
 
+  @FindBy(css = "h3")
+  WebElement errorMessageText
+
   WebDriver driver
 
   LoginPage(WebDriver driver) {
@@ -38,10 +41,9 @@ class LoginPage extends BaseStepDefinitions{
   /**
    * To login in the application by filling in user and password
    */
-  void logIn() {
-    prop = new PropertyReader()
-    sendKeys(userNameField, prop.getPropertyByName("standardUser"))
-    sendKeys(passwordField, prop.getPropertyByName("password"))
+  void logIn(String userName, String password) {
+    sendKeys(userNameField, userName)
+    sendKeys(passwordField, password)
     clickElement(loginButton)
   }
 
@@ -51,6 +53,15 @@ class LoginPage extends BaseStepDefinitions{
   void isLoginSuccessful() {
     isElementPresent(productsHeader)
     Assert.assertTrue("Expected header text to be: Products but got " + getText(productsHeader), getText(productsHeader).contains("Products"))
+  }
+
+  /**
+   * Check if after login with invalid credentials the error message text is as expected
+   * @param text The error message text
+   */
+  void verifyInvalidCredentialsErrorMessage(String text) {
+    isElementPresent(errorMessageText)
+    Assert.assertTrue("Expected header text to be: Products but got " + getText(errorMessageText), getText(errorMessageText).contains(text))
   }
 
   /**

@@ -338,6 +338,17 @@ class BaseStepDefinitions {
     String currentUrl = DriverManager.getDriver().getCurrentUrl()
     currentUrl
   }
+
+  static String getLastWordFromText(String text) {
+    String lastWord = text.split(" ").last()
+    lastWord
+  }
+
+  static WebElement getWebElementFromText(String text) {
+    String selector = "//*[contains(text(),'"+ text + "')]"
+    WebElement element = DriverManager.getDriver().findElement(By.xpath(selector))
+    element
+  }
 }
 
 

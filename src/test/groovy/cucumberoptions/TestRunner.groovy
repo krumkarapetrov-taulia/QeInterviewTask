@@ -12,7 +12,7 @@ import org.junit.runner.RunWith
     "stepdefinitions",
     "utils"],
   plugin = ["pretty", "html:build/reports/Platform-Test-Network-UI-Report.html", "json:src/test/groovy/com/taulia/test/ui/utils/javareport.json"],
-  tags = "@Login")
+  tags = '@Checkout or @Login or @AllProducts')
 
 class TestRunner {
 
